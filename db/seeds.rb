@@ -11,6 +11,7 @@
 
 #----------------------------Cohorts-------------------------------------------#
 cohort = Cohort.create(name: "Coyotes", email: "coyotoes-2014@gmail.com")
+cohort2 = Cohort.create(name: "Bobolinks", email: "bobolinks-2014@gmail.com")
 
 #----------------------------Groups and students-------------------------------------------#
 5.times do 
@@ -24,3 +25,15 @@ end
 end
 
 Photo.create(photo_url: "https://avatars2.githubusercontent.com/u/6732201?s=140", imageable_id: 1, imageable_type: "Cohort")
+
+5.times do 
+  group = Group.create(cohort_id: 2, week_number: 2)
+  4.times{group.students.create(name: Faker::Name.name, cohort_id: 2)}
+end
+
+#----------------------------Photos-------------------------------------------#
+20.times do |i|
+  Photo.create(photo_url: "https://pbs.twimg.com/profile_images/2233651624/jones_400x400.jpg", imageable_id: i+21, imageable_type: "Student")
+end
+
+Photo.create(photo_url: "http://www.allaboutbirds.org/guide/PHOTO/LARGE/Bobolink-Vyn_060513_0010.jpg", imageable_id: 2, imageable_type: "Cohort")
