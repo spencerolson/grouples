@@ -9,18 +9,18 @@
 
 #----------------------------Users-------------------------------------------#
 
-User.create(email: "johnathan@gmail.com", password: "password")
 #----------------------------Cohorts-------------------------------------------#
 cohort = Cohort.create(name: "Coyotes", email: "coyotoes-2014@gmail.com")
-#----------------------------Students-------------------------------------------#
-20.times{cohort.students.create(name: Faker::Name.name)}
-#----------------------------Groups-------------------------------------------#
-5.times do {
+
+#----------------------------Groups and students-------------------------------------------#
+5.times do 
   group = Group.create(cohort_id: 1, week_number: 8)
-  
-}
-
-#---------------------------StudentGroups-------------------------------------#
-
+  4.times{group.students.create(name: Faker::Name.name, cohort_id: 1)}
+end
 
 #----------------------------Photos-------------------------------------------#
+20.times do |i|
+  Photo.create(photo_url: "http://qph.is.quoracdn.net/main-thumb-1521659-200-tgktpwluxywlvuxswwhbxcczypyrftiy.jpeg", imageable_id: i+1, imageable_type: "Student")
+end
+
+Photo.create(photo_url: "https://avatars2.githubusercontent.com/u/6732201?s=140", imageable_id: 1, imageable_type: "Cohort")
