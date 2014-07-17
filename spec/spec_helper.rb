@@ -4,6 +4,7 @@ require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'rspec/autorun'
 require 'database_cleaner'
+require 'shoulda/matchers'
 # require 'coveralls'
 # Coveralls.wear!('rails')
 
