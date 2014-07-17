@@ -56,11 +56,6 @@ group :development do
 	gem 'better_errors'
 end
 
-
-group :development, :test do 
-  gem 'rspec-rails', '~> 3.0.0'
-end
-
 group :development, :test do
   gem 'rspec-rails', '~> 2.14.1'
   gem 'capybara', '~> 2.2.1'
