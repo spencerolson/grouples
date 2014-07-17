@@ -1,7 +1,14 @@
+<<<<<<< HEAD
 
 $(document).ready(function() {
 
     $(".makeMeDraggable").draggable({
+=======
+$(document).ready(function() {
+
+    $(".makeMeDraggable").draggable({
+      revert: "invalid",
+>>>>>>> master
     	snap: '.makeMeDroppable'
     });
 
@@ -12,6 +19,10 @@ $(document).ready(function() {
 
   function handleDropEvent( event, ui ) {
     var draggable = ui.draggable;
+<<<<<<< HEAD
     alert("Who loves pizza!!!")
+=======
+
+>>>>>>> master
   }
 });

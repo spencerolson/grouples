@@ -5,6 +5,6 @@ RSpec.describe Group, :type => :model do
   it { should validate_presence_of(:week_number) }
 
   it { should have_many(:student_groups) }
-  it { should have_many(:students) }
+  it { should have_many(:students).through(:student_groups) }
   it { should belong_to(:cohort) }
 end

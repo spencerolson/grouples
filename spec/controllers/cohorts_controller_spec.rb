@@ -4,6 +4,8 @@ RSpec.describe CohortsController, :type => :controller do
 
   context 'on individual cohort page' do
     it "should return a 200 status code" do
+      session[:user_id] = 1
+
       cohort = Cohort.find(1)
       get :show, :id => cohort.id
       response.status.should be(200)
