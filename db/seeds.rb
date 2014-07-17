@@ -10,8 +10,8 @@
 #----------------------------Users-------------------------------------------#
 
 #----------------------------Cohorts-------------------------------------------#
-cohort = Cohort.create(name: "Coyotes", email: "coyotoes-2014@gmail.com")
-cohort2 = Cohort.create(name: "Bobolinks", email: "bobolinks-2014@gmail.com")
+Cohort.create(name: "Coyotes", email: "coyotoes-2014@gmail.com")
+Cohort.create(name: "Bobolinks", email: "bobolinks-2014@gmail.com")
 
 #----------------------------Groups and students-------------------------------------------#
 5.times do
@@ -22,7 +22,7 @@ end
 
 #----------------------------Photos-------------------------------------------#
 20.times do |i|
-  photo = Photo.create(photo_url: "http://qph.is.quoracdn.net/main-thumb-1521659-200-tgktpwluxywlvuxswwhbxcczypyrftiy.jpeg", imageable_id: i+1, imageable_type: "Student")
+  Photo.create(photo_url: "http://qph.is.quoracdn.net/main-thumb-1521659-200-tgktpwluxywlvuxswwhbxcczypyrftiy.jpeg", imageable_id: i+1, imageable_type: "Student")
 
 end
 
@@ -35,7 +35,7 @@ end
 
 #----------------------------Photos-------------------------------------------#
 20.times do |i|
-  photo= Photo.create(photo_url: "https://pbs.twimg.com/profile_images/2233651624/jones_400x400.jpg", imageable_id: i+21, imageable_type: "Student")
+  Photo.create(photo_url: "https://pbs.twimg.com/profile_images/2233651624/jones_400x400.jpg", imageable_id: i+21, imageable_type: "Student")
 end
 
 Photo.create(photo_url: "http://www.allaboutbirds.org/guide/PHOTO/LARGE/Bobolink-Vyn_060513_0010.jpg", imageable_id: 2, imageable_type: "Cohort")
