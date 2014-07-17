@@ -12,10 +12,16 @@ require 'shoulda/matchers'
 # in spec/support/ and its subdirectories.
 Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 
+Monban.test_mode!
+
 RSpec.configure do |config|
+
   config.include Capybara::DSL
 
   config.mock_with :rspec
+
+  config.include Monban::Test::Helpers, type: :feature
+  config.include Monban::Test::ControllerHelpers, type: :controller
 
   config.before(:suite) do
     DatabaseCleaner.strategy = :transaction
@@ -32,6 +38,7 @@ RSpec.configure do |config|
   end
 
   config.after(:each) do
+     Monban.test_reset!
      DatabaseCleaner.clean
   end
 end
