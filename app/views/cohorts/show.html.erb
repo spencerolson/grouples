@@ -2,8 +2,30 @@
 
 <h4>Students</h4>
 <%=button_to "Create New Group" %>
-<ul>
-  <% @cohort.students.each do |student|%>
-    <li> <%= student.name %><%= link_to image_tag("#{student.photo.photo_url}"), student_path(student), alt: "#{student.name}", id: "#{student.id}"%></li>
+<div id="student_list">
+  <ul>
+    <% @cohort.students.each do |student|%>
+      <li>
+        <div class="makeMeDraggable">
+          <%= link_to image_tag("#{student.photo.photo_url}"), student_path(student), alt: "#{student.name}", id: "#{student.id}"%>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+<div id="group_list">
+  <% 4.times do |i|%>
+    <div id="label_name">
+    Group List <%= i+1 %>
+  </div>
+    <ul>
+      <% 4.times do %>
+        <li>
+          <div class="makeMeDroppable">
+          </div>
+        </li>
+      <% end %>
+    </ul>
   <% end %>
-</ul>
+</div>
