@@ -1,3 +1,42 @@
 // Place all the styles related to the Cohorts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+img{
+  width: 75px;
+  height: 75px;
+}
+
+ul{
+  display:inline-block;
+  list-style-type: none;
+}
+
+li{
+  display: inline-block;
+}
+
+.makeMeDraggable{
+  display: inline-block;
+}
+
+.makeMeDroppable{
+  display: inline-block;
+  height: 75px;
+  width: 75px;
+  border: solid;
+}
+
+#student_list{
+  width: 30%;
+  float: left;
+}
+
+#group_list{
+ width:40%;
+ float: left;
+}
+
+#label_name {
+  display:inline-block;
+}
