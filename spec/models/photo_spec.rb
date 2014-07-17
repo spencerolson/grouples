@@ -1,5 +1,9 @@
-require 'rails_helper'
+require_relative '../spec_helper'
 
 RSpec.describe Photo, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it { should validate_presence_of(:photo_url) }
+  it { should validate_presence_of(:imageable_id) }
+  it { should validate_presence_of(:imageable_type) }
+
+  it { should belong_to(:imageable) }
 end
