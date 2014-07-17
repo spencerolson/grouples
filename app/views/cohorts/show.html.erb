@@ -1,0 +1,8 @@
+<h1> <%= @cohort.name %></h1>
+
+<h4>Students</h4>
+<ul>
+  <% @cohort.students.each do |student|%>
+    <li> <%= student.name %><%= link_to image_tag("#{student.photo.photo_url}"), student_path(student), alt: "#{student.name}", id: "#{student.id}"%></li>
+  <% end %>
+</ul>
