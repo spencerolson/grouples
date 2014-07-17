@@ -1,11 +1,12 @@
 language: ruby
 rvm:
   - "2.0.0"
-  - jruby-18mode # JRuby in 1.8 mode
-  - jruby-19mode # JRuby in 1.9 mode
-  - rbx
-  
+
 before_script:
-  - psql -c 'create database travis_ci_test;' -U postgres
+  - bundle exec rake db:create
+  - bundle exec rake db:migrate
+  - bundle exec rake db:test:prepare --trace
 # uncomment this line if your project needs to run something other than `rake`:
 # script: bundle exec rspec spec
+script:
+  -RAILS-ENV=test - bundle exec rake spec

@@ -1,5 +1,5 @@
-require '../spec_helper'
-
+require_relative '../spec_helper'
+system('clear')
 feature 'Instructor browsing the cohort page' do
   context 'on cohort list page' do
     it 'sees a list of cohorts' do
@@ -12,6 +12,11 @@ feature 'Instructor browsing the cohort page' do
   end
 
   context 'on individual cohort page' do
+
+    it "should return a 200 status code" do
+      expect(response.status).to eq(200)
+    end
+
     it 'sees a list of students' do
       cohort = Cohort.find(1)
       visit cohort_path(cohort)

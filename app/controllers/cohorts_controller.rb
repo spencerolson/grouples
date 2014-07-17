@@ -7,4 +7,7 @@ class CohortsController < ApplicationController
     @cohort = Cohort.find(params[:id])
   end
 
+  def poop
+  end
+
 end
