@@ -1,15 +1,17 @@
-$(function() {
-    console.log( "ready!" );
 
-    $(".makeMeDraggable").draggable();
+$(document).ready(function() {
+
+    $(".makeMeDraggable").draggable({
+    	snap: '.makeMeDroppable'
+    });
 
     $(".makeMeDroppable").droppable({
-      drop: handleDropEvent
+      drop: handleDropEvent,
     });
 
 
   function handleDropEvent( event, ui ) {
     var draggable = ui.draggable;
-    alert( 'The square with ID "' + draggable.attr('id') + '" was dropped onto me!' );
+
   }
 });
