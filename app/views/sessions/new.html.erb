@@ -1,4 +1,6 @@
+
 <%= form_for :session, url: session_path do |form| %>
+<h1> LOGIN PAGE </h1>
   <div>
     <%= form.label :email %>
     <%= form.email_field :email %>
@@ -11,4 +13,5 @@
     <%= form.submit "Sign in" %>
   </div>
 <% end %>
-<h1>Hello Travis!</h1>
+
+<%= flash[:error] %>
