@@ -56,13 +56,13 @@ group :development do
 	gem 'better_errors'
 end
 
-<<<<<<< HEAD
+
 group :development, :test do 
   gem 'rspec-rails', '~> 3.0.0'
-=======
+end
+
 group :development, :test do
   gem 'rspec-rails', '~> 2.14.1'
   gem 'capybara', '~> 2.2.1'
   gem 'database_cleaner', '~> 1.2.0'
->>>>>>> master
 end
