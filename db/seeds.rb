@@ -19,6 +19,15 @@ Cohort.create(name: "Bobolinks", email: "bobolinks-2014@gmail.com")
   4.times{group.students.create(name: Faker::Name.name, cohort_id: 1)}
 
 end
+5.times do
+  shuffled_students = Cohort.first.students.shuffle
+
+  5.times do
+    group = Group.create(cohort_id: 1, week_number: 9)
+    4.times{group.students << shuffled_students.pop}
+  end
+end
+
 
 #----------------------------Photos-------------------------------------------#
 20.times do |i|

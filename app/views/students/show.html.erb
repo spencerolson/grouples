@@ -1,0 +1,10 @@
+<h3><%= @student.name %></h3>
+
+<ul>
+
+	<% @cohort_mates.each do |student, times_grouped| %>
+		<li id="student_stats">
+			<%= student.name %> <%= times_grouped %> 
+		</li>
+	<% end %>
+</ul>
