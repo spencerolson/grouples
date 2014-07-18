@@ -1,4 +1,4 @@
-require_relative '../spec_helper'
+require 'rails_helper'
 #should be require rails_helper
 
 RSpec.describe Cohort, :type => :model do
