@@ -1,4 +1,5 @@
 require_relative '../spec_helper'
+#should be require rails_helper
 
 RSpec.describe Cohort, :type => :model do
     it { should validate_presence_of(:name) }
