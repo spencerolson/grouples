@@ -6,8 +6,8 @@
   <ul>
     <% @cohort.students.each do |student|%>
       <li>
-        <div class="student-box", id= <%= "#{student.id}"%>>
-          <%= link_to image_tag("#{student.photo.photo_url}" ), student_path(student), alt: "#{student.name}"%>
+        <div class="student-box">
+          <%= link_to image_tag("#{student.photo.photo_url}", data: { student_id: student.id }), student_path(student), alt: "#{student.name}"%>
         </div>
       </li>
     <% end %>
