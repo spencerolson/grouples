@@ -2,10 +2,12 @@ $(document).ready(function() {
 
 
   $(".student-box").sortable({
-    connectWith: $('.group-box')
+    connectWith: $('.group-box'),
+    cursorAt: {top:37.5, left:37.5}
   }).sortable();
 
   $(".group-box").sortable({
+    cursorAt: {top:37.5, left:37.5},
     connectWith: $('.student-box'),
 
     receive: function(event, ui ){
