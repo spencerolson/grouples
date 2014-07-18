@@ -2,6 +2,9 @@ require_relative '../spec_helper'
 #should be require rails_helper
 
 RSpec.describe Student, :type => :model do
+	it { should respond_to(:cohort_id) }
+	it { should respond_to(:name) }
+
   it { should validate_presence_of(:cohort_id) }
   it { should validate_presence_of(:name) }
 
