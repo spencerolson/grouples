@@ -36,7 +36,7 @@ group :test do
 end
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 
-gem 'coveralls', require: false
+# gem 'coveralls', require: false
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -57,7 +57,7 @@ group :development do
 end
 
 group :development, :test do
-  gem 'rspec-rails', '~> 2.14.1'
-  gem 'capybara', '~> 2.2.1'
-  gem 'database_cleaner', '~> 1.2.0'
+  gem 'rspec-rails', '~> 3.0'
+  gem 'capybara'
+  gem 'database_cleaner'
 end
