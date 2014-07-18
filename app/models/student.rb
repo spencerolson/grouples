@@ -25,6 +25,6 @@ class Student < ActiveRecord::Base
     cohort_mates_arr.each do |student|
       cohort_mates[student] = student.times_grouped_with(self)
     end
-    cohort_mates = cohort_mates.sort_by{|key, value| value}.reverse
+    cohort_mates = cohort_mates.sort_by{|key, value| value}
   end
 end
