@@ -1,16 +1,16 @@
 $(document).ready(function() {
 
-    $(".makeMeDraggable").draggable({
-      revert: "invalid",
 
-    	snap: '.makeMeDroppable'
-    });
+  $(".student-box").sortable({
+    connectWith: $('.group-box')
+  }).sortable();
 
-    $(".makeMeDroppable").droppable({
-      drop: handleDropEvent,
-    });
+  $(".group-box").sortable({
+    // drop: handleDropEvent,
+    connectWith: $('.student-box')
+  });
 
-  function handleDropEvent( event, ui ) {
-    var draggable = ui.draggable;
-  }
+  // function handleDropEvent( event, ui ) {
+  //   var draggable = ui.draggable;
+  // }
 });

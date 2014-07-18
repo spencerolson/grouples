@@ -6,7 +6,7 @@
   <ul>
     <% @cohort.students.each do |student|%>
       <li>
-        <div class="makeMeDraggable", id= <%= "#{student.id}"%>>
+        <div class="student-box", id= <%= "#{student.id}"%>>
           <%= link_to image_tag("#{student.photo.photo_url}" ), student_path(student), alt: "#{student.name}"%>
         </div>
       </li>
@@ -20,12 +20,8 @@
     Group List <%= i+1 %>
   </div>
     <ul>
-      <% 4.times do %>
-        <li>
-          <div class="makeMeDroppable">
-          </div>
-        </li>
-      <% end %>
+        <div class="group-box">
+        </div>
     </ul>
   <% end %>
 </div>
