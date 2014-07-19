@@ -24,12 +24,12 @@ $(document).ready(function() {
         student_ids.push($(child.children[0]).data("student-id"))
       };
       var thinger = {students: student_ids}
-     
+
 
       $.post( "/sort", thinger, function(response) {
         console.log("Response is " + response);
       });
-    
+
        // $.ajax({
        //    type: "GET",
        //    url: '/sort',
@@ -40,5 +40,20 @@ $(document).ready(function() {
        // });
     }
   });
+
+
+  $("#group_creation").click( function() {
+    // event.preventDefault;
+    // console.log($(this))
+    var cohortId = $(this).attr("class")
+    console.log($(".group-box")[0].children[0].className);
+    // console.log($(this).parent()[0].children);
+
+    var ajaxRequest = $.ajax({
+      url: '/cohorts/' + cohortId + "/groups",
+      type: "POST"
+      // data:
+    })
+  })
 
 });

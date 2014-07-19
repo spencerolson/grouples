@@ -7,7 +7,7 @@
     <% @cohort.students.each do |student|%>
       <li>
         <div class="student-box">
-          <%= link_to image_tag("#{student.photo.photo_url}", data: { student_id: student.id }), student_path(student), alt: "#{student.name}"%>
+          <%= link_to image_tag("#{student.photo.photo_url}", data: { student_id: student.id }), student_path(student), alt: "#{student.name}", :class => "#{student.id}"%>
         </div>
       </li>
     <% end %>
@@ -20,8 +20,8 @@
     Group List <%= i+1 %>
   </div>
     <ul>
-        <div class="group-box">
-        </div>
+          <div class="group-box">
+          </div>
     </ul>
   <% end %>
    <%=submit_tag "Create New Group", id: "group_creation", class: "#{@cohort.id}" %>
