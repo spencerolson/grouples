@@ -6,7 +6,7 @@ class Student < ActiveRecord::Base
 
   validates :cohort_id, :name, presence: true
 
-  def times_grouped_with(*students)
+  def times_grouped_with(students)
     my_groups = self.groups
     grouped_with_count = 0
 
