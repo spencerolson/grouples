@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   resources :cohorts
   resources :students
   root 'sessions#new'
+
+  post '/sort' => 'groups#sort'
 end
