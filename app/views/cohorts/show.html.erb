@@ -1,5 +1,6 @@
 <h1><%= @cohort.name%></h1>
 
+<%= link_to "Create New Cohort", new_cohort_path %>
 <%=link_to "Create New Group", new_cohort_group_path(@cohort.id)%><br>
 
 <% @cohort.students.each do |student| %>

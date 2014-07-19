@@ -13,6 +13,7 @@ class GroupsController < ApplicationController
     end
 
     render json: ["farts"]
+  end
 
   def new
     @cohort = Cohort.includes(students: :photo).find(params[:cohort_id])
