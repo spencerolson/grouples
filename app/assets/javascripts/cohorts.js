@@ -17,35 +17,28 @@ $(document).ready(function() {
         connectWith: $('.student-box'),
 
         receive: function(event, ui) {
-            // var sortable = ui.sortable;
-            // console.log(this.children[0].children[0].id);
             var student_ids = []
+            var other_member_ids = []
+            var other_students = $("#student_list ul li").children().children()
 
-            // this.children.forEach(function(child) {
-            //   var something = child.something;
-            //   student_ids.push(child);
-            // })
+            for (i = 0; i < other_students.length; i ++){
+                other_member_ids.push(other_students[i].className)
+            };
+
             for (i = 0; i < this.children.length; i++) {
                 var child = this.children[i];
                 student_ids.push($(child.children[0]).data("student-id"))
             };
-            var thinger = {
-                students: student_ids
+            var data = {
+                group: student_ids,
+                other_members: other_member_ids
             }
 
 
-            $.post("/sort", thinger, function(response) {
-                console.log("Response is " + response);
+            $.post("/sort", data, function(response) {
+                // console.log("Response is " + response);
             });
 
-            // $.ajax({
-            //    type: "GET",
-            //    url: '/sort',
-            //    data: student_ids,
-            //    success: function(response){
-            //      console.log(response);
-            //    }
-            // });
         }
     });
 

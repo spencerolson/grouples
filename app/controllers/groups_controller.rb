@@ -2,11 +2,10 @@ class GroupsController < ApplicationController
 
   skip_before_filter :verify_authenticity_token
   def sort
-    current_group_members = params[:students].map{|student_id| Student.find(student_id)}
+    current_group_members = params[:group].map{|student_id| Student.find(student_id)}
     puts "#{current_group_members.length} current group members"
 
-    other_cohort_members = current_group_members.first.cohort.students.where("id not in (?)", params[:students])
-    puts "#{other_cohort_members.length} other cohort members"
+    other_cohort_members = params[:other_members].map{|student_id| Student.find(student_id)}
 
     other = {}
     other_cohort_members.each do |cohort_member|
@@ -19,8 +18,9 @@ class GroupsController < ApplicationController
     other.each do |student, times_grouped|
       puts "#{student.name}: grouped #{times_grouped} times"
     end
+    puts "#{other_cohort_members.length} other cohort members"
 
-    render json: other
+    render json: other_cohort_members
   end
 
   def new
