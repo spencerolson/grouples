@@ -1,27 +1,10 @@
-<h1> <%= @cohort.name %></h1>
+<h1><%= @cohort.name%></h1>
 
-<h4>Students</h4>
-<%=button_to "Create New Group" %>
-<div id="student_list">
-  <ul>
-    <% @cohort.students.each do |student|%>
-      <li>
-        <div class="student-box">
-          <%= link_to image_tag("#{student.photo.photo_url}", data: { student_id: student.id }), student_path(student), alt: "#{student.name}"%>
-        </div>
-      </li>
-    <% end %>
-  </ul>
-</div>
+<%=link_to "Create New Group", new_cohort_group_path(@cohort.id)%><br>
 
-<div id="group_list">
-  <% 4.times do |i|%>
-    <div id="label_name">
-    Group List <%= i+1 %>
-  </div>
-    <ul>
-        <div class="group-box">
-        </div>
-    </ul>
-  <% end %>
-</div>
+<% @cohort.students.each do |student| %>
+	<%= link_to image_tag("#{student.photo.photo_url}", data: { student_id: student.id }), student_path(student), alt: "#{student.name}"%>
+	<%= student.name %><br>
+<% end %>
+
+<%= link_to 'Back', cohorts_path %>

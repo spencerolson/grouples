@@ -1,4 +1,5 @@
 class GroupsController < ApplicationController
+
   skip_before_filter :verify_authenticity_token
   def sort
     current_group_members = params[:students].map{|student_id| Student.find(student_id)}
@@ -12,5 +13,12 @@ class GroupsController < ApplicationController
     end
 
     render json: ["farts"]
+
+  def new
+    @cohort = Cohort.includes(students: :photo).find(params[:cohort_id])
+  end
+
+  def create
+
   end
 end
