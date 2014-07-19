@@ -1,7 +1,7 @@
 <h1> <%= @cohort.name %></h1>
 
 <h4>Students</h4>
-<%=button_to "Create New Group" %>
+
 <div id="student_list">
   <ul>
     <% @cohort.students.each do |student|%>
@@ -24,4 +24,6 @@
         </div>
     </ul>
   <% end %>
+   <%=submit_tag "Create New Group", id: "group_creation", class: "#{@cohort.id}" %>
 </div>
+
