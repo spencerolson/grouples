@@ -19,12 +19,17 @@ class GroupsController < ApplicationController
     @cohort = Cohort.includes(students: :photo).find(params[:cohort_id])
   end
 
+
+
   def create
     # puts params[:array].class
     # puts params[:array]["0"]
+    cohort = Cohort.find(params[:cohort_id])
+    week = cohort.new_week
+
     params[:array].each do |key, value|
       if value.class == Array
-        group = Group.create(cohort_id: params[:cohort_id], week_number: 7)
+        group = Group.create(cohort_id: params[:cohort_id], week_number: week)
         value.each do |id|
           group.students << Student.find(id)
           puts "this is the id" + "#{id} and the group is #{group}"
