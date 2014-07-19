@@ -1,0 +1,21 @@
+<h1><%=@cohort.name%> needs a photo!</h1>
+
+<%=  form_for(@photo, url: cohort_photos_path) do |f| %>
+
+	<p>
+		<%= f.text_field :photo_url, :placeholder => "Photo Url" %><br>
+	</p>
+
+	<p>
+		<%= f.hidden_field :imageable_id, :value => @cohort.id %>
+	</p>
+
+	<p>
+		<%= f.hidden_field :imageable_type, :value => "Cohort" %>
+	</p>
+
+	<p>
+		<%= f.submit "Add Photo"%>
+	</p>
+
+<% end %>
