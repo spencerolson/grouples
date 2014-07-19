@@ -62,12 +62,14 @@ $(document).ready(function() {
             }
             return group
         }
-        groups_hash = {}
+        var group_hash = {}
+        var groups_array = []
         var i = 0
         while (i < 6) {
-            groups_hash["group"+i] = groupStudents(i)
+           groups_array.push(groupStudents(i))
             i++
         }
+        var groups_hash = {array: groups_array }
         console.log(groups_hash)
 
         var ajaxRequest = $.ajax({
