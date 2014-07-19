@@ -28,6 +28,19 @@ class GroupsController < ApplicationController
   end
 
   def create
+    # puts params[:array].class
+    # puts params[:array]["0"]
+    params[:array].each do |key, value|
+      if value.class == Array
+        group = Group.create(cohort_id: params[:cohort_id], week_number: 7)
+        value.each do |id|
+          group.students << Student.find(id)
+          puts "this is the id" + "#{id} and the group is #{group}"
+        end
+      end
+    end
 
+    render json: ["farts"]
   end
+
 end
