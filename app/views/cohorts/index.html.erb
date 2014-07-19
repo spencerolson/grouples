@@ -1,4 +1,4 @@
 <h1> These are the Cohorts </h1>
-<% Cohort.all.each do |cohort| %>
+<% @cohorts.each do |cohort| %>
 <%= link_to image_tag("#{cohort.photo.photo_url}"), cohort_path(cohort), alt: "#{cohort.name}", id: "#{cohort.id}" %>
 <% end %>
