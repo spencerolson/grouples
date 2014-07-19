@@ -46,7 +46,32 @@ $(document).ready(function() {
     // event.preventDefault;
     // console.log($(this))
     var cohortId = $(this).attr("class")
-    console.log($(".group-box")[0].children[0].className);
+    var group1 = []
+    var group2 = []
+    var group3 = []
+    var group4 = []
+    var group5 = []
+    var group6 = []
+    // $(".group-box")[0].children.forEach(function(student) {
+    //   group1 << student.className;
+    // })
+  var groupStudents = function(groupNumber) {
+    var group = []
+    var a = 0
+    while ($(".group-box")[groupNumber].children[a] != undefined) {
+      console.log($(".group-box")[groupNumber].children[a].className)
+      group.push($(".group-box")[groupNumber].children[a].className)
+      a++;
+  }
+  return group
+}
+
+  console.log(groupStudents(0))
+
+
+  // console.log ($(".group-box")[0].children[0].className)
+
+    // console.log($(".group-box")[0].children[0].className);
     // console.log($(this).parent()[0].children);
 
     var ajaxRequest = $.ajax({
