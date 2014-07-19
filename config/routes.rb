@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create]
   resources :cohorts do
     resources :groups, only: [:new, :create]
+    resources :photos, only: [:new, :create]
   end
   resources :students
   root 'sessions#new'

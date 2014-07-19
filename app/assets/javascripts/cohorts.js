@@ -1,6 +1,5 @@
 $(document).ready(function() {
 
-
   $(".student-box").sortable({
     connectWith: $('.group-box'),
     cursorAt: {top:37.5, left:37.5}

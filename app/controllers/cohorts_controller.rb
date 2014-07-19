@@ -10,8 +10,8 @@ class CohortsController < ApplicationController
 
   def create
   	@cohort = Cohort.new(cohort_params)
-		if cohort.save
-			redirect_to @cohort
+		if @cohort.save
+			redirect_to new_cohort_photo_path(@cohort.id)
 		else
 			render 'new'
 		end

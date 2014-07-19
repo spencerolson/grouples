@@ -1,6 +1,15 @@
 <h1>Testing</h1>
 
 <%= form_for @cohort do |f| %>
-	<%= f.label :title, "Cohort Name" %>
-	<%= f.text_field :title, :placeholder => "Cohort Name" %>
+	<p>
+		<%= f.text_field :name, :placeholder => "Cohort Name" %><br>
+	</p>
+
+	<p>
+		<%= f.text_field :email, :placeholder => "Cohort Email" %><br>
+	</p>
+
+	<p>
+		<%= f.submit "Add Cohort" %>
+	</p>
 <% end %>
