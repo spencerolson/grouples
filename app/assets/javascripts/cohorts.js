@@ -23,8 +23,21 @@ $(document).ready(function() {
         var child = this.children[i];
         student_ids.push($(child.children[0]).data("student-id"))
       };
+      var thinger = {students: student_ids}
+     
 
-       console.log(student_ids)
+      $.post( "/sort", thinger, function(response) {
+        console.log("Response is " + response);
+      });
+    
+       // $.ajax({
+       //    type: "GET",
+       //    url: '/sort',
+       //    data: student_ids,
+       //    success: function(response){
+       //      console.log(response);
+       //    }
+       // });
     }
   });
 

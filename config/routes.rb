@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   end
   resources :students
   root 'sessions#new'
+
+  post '/sort' => 'groups#sort'
 end
