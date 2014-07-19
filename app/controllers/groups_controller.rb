@@ -20,6 +20,15 @@ class GroupsController < ApplicationController
   end
 
   def create
-
+    puts params[:group0].class
+    puts params[:group0]
+    # params[:group1]
+    # params[:group2]
+    # params[:group3]
+    # params[:group4]
+    # params[:group5]
+    # puts params[:1]
+    render json: ["farts"]
   end
+
 end
