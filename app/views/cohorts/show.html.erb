@@ -1,3 +1,4 @@
+<%= link_to 'Back', cohorts_path, class: "btn btn-primary" %>
 <h1><%= @cohort.name %></h1>
 <%= link_to 'View all Previously Created Groups', cohort_groups_path(@cohort) %>
 
@@ -6,10 +7,19 @@
 </p>
 
 <% @cohort.students.each do |student| %>
-	<%= link_to image_tag("#{student.photo.photo_url}", data: { student_id: student.id }), student_path(student), alt: "#{student.name}"%>
-	<%= student.name %><br>
-	<%= link_to "Edit", edit_student_path(student.id) %>
-	<%= button_to "delete", student, :method => :delete %>
+<div class="row" style= "display: inline-block">
+  <div class="col-sm-6 col-md-4" style= "width: 178px">
+      <div class="thumbnail damn-sizes" style= "display: inline-block; ">
+      <%= link_to image_tag("#{student.photo.photo_url}", data: { student_id: student.id }), student_path(student), alt: "#{student.name}"%>
+      <div class="caption">
+        <h3><%= student.name %></h3>
+        <p><%= link_to "Edit", edit_student_path(student.id), class: "btn btn-primary", role: "button" %>
+	<%= button_to "Delete", student, :method => :delete, class: "btn btn-button", role: "button" %></p>
+      </div>
+    </div>
+  </div>
+</div>
+
 <% end %>
 
-<%= link_to 'Back', cohorts_path %>
+
