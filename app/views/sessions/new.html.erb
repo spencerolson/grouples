@@ -1,17 +1,52 @@
 
-<%= form_for :session, url: session_path do |form| %>
-<h1> LOGIN PAGE </h1>
-  <div id="login_form">
-    <%= form.label :email %>
-    <%= form.email_field :email %>
-  </div>
-  <div>
-    <%= form.label :password %>
-    <%= form.password_field :password %>
-  </div>
-  <div>
-    <%= form.submit "Sign in" %>
-  </div>
-<% end %>
 
-<%= flash[:error] %>
+<div class="site-wrapper">
+
+      <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+          <div class="masthead clearfix">
+            <div class="inner">
+              <h3 class="masthead-brand">Grouples</h3>
+              <ul class="nav masthead-nav">
+                <li class="active"><a href="/">Home</a></li>
+                <li><a href="/users/new">Sign Up</a></li>
+                <li><a href="https://twitter.com/al2o3cr">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="inner cover">
+            <!-- <h1 class="cover-heading">Hi</h1> -->
+            <div >
+              <%= form_for :session, url: session_path do |form| %>
+                  <div>
+                  <%= form.label :email %>
+                  <div id="login_form"><%= form.email_field :email %></div>
+                </div>
+                <div>
+                  <%= form.label :password %>
+                  <div id="login_form"><%= form.password_field :password %></div>
+                </div><br>
+                <div>
+                  <%= form.submit "Sign in", class: "btn btn-lg btn-default" %>
+                </div>
+              <% end %>
+
+              <%= flash[:error] %>
+              </div>
+          </div>
+
+          <div class="mastfoot">
+            <div class="inner">
+              <p>Created by <a href="https://github.com/hinghuynh">Team 'Merica</a>, by <a href="https://twitter.com/al2o3cr">@teammerica</a>.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
