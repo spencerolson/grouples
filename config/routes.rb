@@ -4,12 +4,12 @@ Rails.application.routes.draw do
   resources :cohorts do
     resources :groups, only: [:new, :create]
     resources :photos, only: [:new, :create]
-    resources :students, only: [:new, :create, :edit, :update, :destroy]
+    resources :students, only: [:new, :create, :update]
     resources :students, only: [:new, :create] do
     	resources :photos, only: [:new, :create]
     end
   end
-  resources :students, only: [:show]
+  resources :students, only: [:show, :edit, :destroy]
   root 'sessions#new'
 
   post '/sort' => 'groups#sort'
