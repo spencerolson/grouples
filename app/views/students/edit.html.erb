@@ -1,0 +1,12 @@
+<h1>Edit Student</h1>
+
+<%= form_for @student do |f| %>
+
+	<p>
+		<%= f.text_field :name, :value => @student.name %>
+	</p>
+
+	<p>
+		<%= f.submit "Edit" %>
+	</p>
+<% end %>

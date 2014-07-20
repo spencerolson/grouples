@@ -20,6 +20,27 @@ class StudentsController < ApplicationController
     @cohort_mates = @student.cohort_mates_sorted 
   end
 
+  def edit
+  	@cohort = Cohort.find(params[:cohort_id])
+  	@student = Student.find(params[:id])
+  end
+
+  def update
+  	@cohort = Cohort.find(params[:cohort_id])
+  	@student = Student.find(params[:id])
+
+  	if @student.update(student_params)
+  		redirect_to cohort_path
+  	else
+  		render 'edit'
+  	end
+  end
+
+  def destroy
+  	@student = Student.find(params[:id])
+  	@student.destroy
+  end
+
   private
   def student_params
   	params.require(:student).permit(:cohort_id, :name)
