@@ -23,7 +23,7 @@ class Student < ActiveRecord::Base
 
     cohort_mates = {}
     cohort_mates_arr.each do |student|
-      cohort_mates[student] = student.times_grouped_with(self)
+      cohort_mates[student] = student.times_grouped_with([self])
     end
     cohort_mates = cohort_mates.sort_by{|key, value| value}
   end
