@@ -34,6 +34,7 @@ class GroupsController < ApplicationController
   end
 
   def create
+    @cohort =  Cohort.find(params[:cohort_id])
     # puts params[:array].class
     # puts params[:array]["0"]
     params[:array].each do |key, value|
@@ -41,12 +42,12 @@ class GroupsController < ApplicationController
         group = Group.create(cohort_id: params[:cohort_id], week_number: 7)
         value.each do |id|
           group.students << Student.find(id)
-          puts "this is the id" + "#{id} and the group is #{group}"
+          puts "this is the id: #{id} and the group is #{group}"
         end
       end
     end
-
-    format.html { render :partial => "remaining_students_list" }
+    puts "LJHGUOHLBVKLJBVKUGBOHJKLVGLJB"
+    redirect_to cohort_path(@cohort.id)
   end
 
 end
