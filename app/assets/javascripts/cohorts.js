@@ -35,7 +35,7 @@ $(document).ready(function() {
             }
 
             $.post("/sort", data, function(response) {
-                console.log("Response is " + response);
+                // console.log("Response is " + response);
 
                 $("#student_list").empty();
                 $("#student_list").append(response);
@@ -87,7 +87,7 @@ $(document).ready(function() {
           type: "POST",
           data: groups_hash,
           success: function(response) {
-            console.log("recieved response")
+            window.location.replace("http://localhost:3000/cohorts/" + cohortId);
           }
       })
   })
