@@ -6,7 +6,9 @@
 	<% if group.week_number > week%>
 		<h3> Week: <%= group.week_number %> </h3>
 		<% week = group.week_number %>
+
 	<% end %>
+	<h5><%= "Group #{index + 1}:"%></h5>
 	<% group.students.each do |student| %>
 		 <%= student.name %><%= "," unless group.students.last == student %>
 	<% end %>
