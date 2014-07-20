@@ -3,6 +3,7 @@ class GroupsController < ApplicationController
   skip_before_filter :verify_authenticity_token
 
   def index
+    puts "index called"
     @cohort = Cohort.find(params[:cohort_id])
   end
   def sort
@@ -39,10 +40,7 @@ class GroupsController < ApplicationController
 
   def create
     @cohort =  Cohort.find(params[:cohort_id])
-    # puts params[:array].class
-    # puts params[:array]["0"]
-    cohort = Cohort.find(params[:cohort_id])
-    week = cohort.new_week
+    week = @cohort.new_week
     params[:array].each do |key, value|
       if value.class == Array
         group = Group.create(cohort_id: params[:cohort_id], week_number: week)
@@ -52,7 +50,7 @@ class GroupsController < ApplicationController
         end
       end
     end
-    redirect_to cohort_path(@cohort.id)
+    redirect_to "/cohorts/#{@cohort.id}/groups"
   end
 
 end

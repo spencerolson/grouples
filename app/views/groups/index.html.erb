@@ -1,9 +1,14 @@
+<%= link_to 'Cohort Home Page', cohort_path(@cohort) %>
 <%= @cohort.name %>
 <br>
+<% week = 0 %>
 <% @cohort.groups.each_with_index do |group, index| %>
-	Group number: <%= index+1 %>, Week: <%= group.week_number %>
+	<% if group.week_number > week%>
+		<h3> Week: <%= group.week_number %> </h3>
+		<% week = group.week_number %>
+	<% end %>
 	<% group.students.each do |student| %>
-		<%= student.name %>,
+		 <%= student.name %><%= "," unless group.students.last == student %>
 	<% end %>
 	<br>
 <% end %>
