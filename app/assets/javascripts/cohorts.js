@@ -39,6 +39,22 @@ $(document).ready(function() {
 
                 $("#student_list").empty();
                 $("#student_list").append(response);
+                $(".student-box").sortable({
+                  connectWith: $('.group-box'),
+                  cursorAt: {
+                      top: 37.5,
+                      left: 37.5
+                  }
+                }).sortable();
+                $(".group-box").sortable({
+                  cursorAt: {
+                  top: 37.5,
+                  left: 37.5
+                },
+                  connectWith: $('.student-box')}).sortable();
+
+
+
             });
 
         }
