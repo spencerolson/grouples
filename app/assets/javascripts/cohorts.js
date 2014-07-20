@@ -35,7 +35,10 @@ $(document).ready(function() {
             }
 
             $.post("/sort", data, function(response) {
-                // console.log("Response is " + response);
+                console.log("Response is " + response);
+
+                $("#student_list").empty();
+                $("#student_list").append(response);
             });
 
         }

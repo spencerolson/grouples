@@ -14,17 +14,23 @@ class GroupsController < ApplicationController
 
     puts "-"*400
     other = other.sort_by{|student, times_grouped| times_grouped}
-    
+    @students = []
+
     other.each do |student, times_grouped|
       puts "#{student.name}: grouped #{times_grouped} times"
+      @students << student
     end
     puts "#{other_cohort_members.length} other cohort members"
 
-    render json: other_cohort_members
+
+    respond_to do |format|
+      format.html { render :partial => "remaining_students_list" }
+    end
   end
 
   def new
     @cohort = Cohort.includes(students: :photo).find(params[:cohort_id])
+    @students = @cohort.students
   end
 
   def create
