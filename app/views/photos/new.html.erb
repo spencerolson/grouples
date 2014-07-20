@@ -1,19 +1,33 @@
-<h1><%=@cohort.name%> needs a photo!</h1>
+<% if @student %>
+	<h1><%=@student.name%> needs a photo!</h1>
+<% else %>
+	<h1><%=@cohort.name%> needs a photo!</h1>
+<% end %>
 
 <%=  form_for(@photo, url: cohort_photos_path) do |f| %>
 
 	<p>
 		<%= f.text_field :photo_url, :placeholder => "Photo Url" %><br>
 	</p>
+	
+	<% if @student %>
+		<p>
+			<%= f.hidden_field :imageable_id, :value => @student.id %>
+		</p>
 
-	<p>
-		<%= f.hidden_field :imageable_id, :value => @cohort.id %>
-	</p>
+		<p>
+			<%= f.hidden_field :imageable_type, :value => "Student" %>
+		</p>
+	
+	<% else %>
+		<p>
+			<%= f.hidden_field :imageable_id, :value => @cohort.id %>
+		</p>
 
-	<p>
-		<%= f.hidden_field :imageable_type, :value => "Cohort" %>
-	</p>
-
+		<p>
+			<%= f.hidden_field :imageable_type, :value => "Cohort" %>
+		</p>
+	<% end %>
 	<p>
 		<%= f.submit "Add Photo"%>
 	</p>
