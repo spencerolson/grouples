@@ -1,0 +1,12 @@
+<h1>Add a student</h1>
+
+<%= form_for(@student, url: cohort_students_path) do |f| %>
+	<%= f.hidden_field :cohort_id, :value => @cohort.id %>
+	<p>
+		<%= f.text_field :name, :placeholder => "Student Name" %>
+	</p>
+
+	<p>
+		<%= f.submit "Add Student" %>
+	</p>
+<% end %>

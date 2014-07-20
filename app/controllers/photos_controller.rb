@@ -1,12 +1,20 @@
 class PhotosController < ApplicationController
 	
 	def new
-		@cohort = Cohort.find(params[:cohort_id])
+		if params[:student_id]
+			@student = Student.find(params[:student_id])
+		else
+			@cohort = Cohort.find(params[:cohort_id])
+		end
 		@photo = Photo.new
 	end
 
 	def create
-		@cohort = Cohort.find(params[:cohort_id])
+		if params[:student_id]
+			@student = Student.find(params[:student_id])
+		else
+			@cohort = Cohort.find(params[:cohort_id])
+		end
   	@photo = Photo.new(photo_params)
 		if @photo.save
 			redirect_to cohort_path(@cohort.id)
