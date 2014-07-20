@@ -37,32 +37,3 @@ li{
   display:inline-block;
 }
 
-img {
-    width: 100%;
-  height: auto;
-  overflow: hidden;
-}
-
-.cohort-images {
-  margin-left: 20%;
-  margin-right: 10%;
-
-}
-
-
-.cohort-image {
-  width: 30%;
-  height: auto;
-  float: left;
-  -webkit-transition: all 1s ease;
-     -moz-transition: all 1s ease;
-       -o-transition: all 1s ease;
-      -ms-transition: all 1s ease;
-          transition: all 1s ease;
-}
-
-.cohort-image:hover {
-  -webkit-filter: grayscale(100%);
-}
-
-
