@@ -46,7 +46,7 @@ class GroupsController < ApplicationController
       end
     end
 
-    render json: ["farts"]
+    format.html { render :partial => "remaining_students_list" }
   end
 
 end

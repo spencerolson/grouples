@@ -1,0 +1,10 @@
+<h1><%= @cohort.name%></h1>
+
+<%=link_to "Create New Group", new_cohort_group_path(@cohort.id)%><br>
+
+<% @cohort.students.each do |student| %>
+  <%= link_to image_tag("#{student.photo.photo_url}", data: { student_id: student.id }), student_path(student), alt: "#{student.name}"%>
+  <%= student.name %><br>
+<% end %>
+
+<%= link_to 'Back', cohorts_path %>

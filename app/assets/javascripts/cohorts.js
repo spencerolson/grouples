@@ -71,7 +71,7 @@ $(document).ready(function() {
           type: "POST",
           data: groups_hash,
           success: function(response) {
-            console.log("recieved response")
+            console.log(response)
           }
       })
   })
