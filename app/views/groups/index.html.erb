@@ -1,0 +1,9 @@
+<%= @cohort.name %>
+<br>
+<% @cohort.groups.each_with_index do |group, index| %>
+	Group number: <%= index+1 %>, Week: <%= group.week_number %>
+	<% group.students.each do |student| %>
+		<%= student.name %>,
+	<% end %>
+	<br>
+<% end %>
