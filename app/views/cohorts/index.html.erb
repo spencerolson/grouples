@@ -1,6 +1,12 @@
+
+<%= stylesheet_link_tag "cohort" %>
 <h1> Cohort Navigation </h1>
 <%= link_to "Create New Cohort", new_cohort_path %><br>
+<div class="cohort-images">
+	<% @cohorts.each do |cohort| %>
+		<div class="cohort-image">
+			<%= link_to image_tag("#{cohort.photo.photo_url}"), cohort_path(cohort), alt: "#{cohort.name}", id: "#{cohort.id}" %>
+		</div>
+	<% end %>
+</div>
 
-<% @cohorts.each do |cohort| %>
-<%= link_to image_tag("#{cohort.photo.photo_url}"), cohort_path(cohort), alt: "#{cohort.name}", id: "#{cohort.id}" %>
-<% end %>
