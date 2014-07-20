@@ -21,7 +21,7 @@ class StudentsController < ApplicationController
   end
 
   def edit
-  	@cohort = Cohort.find(params[:cohort_id])
+  	@cohorts = Cohort.all
   	@student = Student.find(params[:id])
   end
 
@@ -30,7 +30,7 @@ class StudentsController < ApplicationController
   	@student = Student.find(params[:id])
 
   	if @student.update(student_params)
-  		redirect_to cohort_path
+  		redirect_to cohort_path(@cohort.id)
   	else
   		render 'edit'
   	end
@@ -38,7 +38,10 @@ class StudentsController < ApplicationController
 
   def destroy
   	@student = Student.find(params[:id])
+  	@cohort = @student.cohort
   	@student.destroy
+
+  	redirect_to cohort_path(@cohort.id)
   end
 
   private

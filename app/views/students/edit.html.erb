@@ -1,9 +1,16 @@
 <h1>Edit Student</h1>
 
-<%= form_for @student do |f| %>
+<%= form_for(@student, url: cohort_student_path(@student.cohort_id, @student.id)) do |f| %>
 
 	<p>
 		<%= f.text_field :name, :value => @student.name %>
+	</p>
+
+	<p>
+		<% @cohorts.each do |cohort| %>
+		<%= f.label :cohort_id, cohort.name, :value => cohort.id %>
+    <%= f.radio_button :cohort_id, cohort.id %><br>
+		<% end %>
 	</p>
 
 	<p>
