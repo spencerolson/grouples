@@ -2,14 +2,14 @@
 
 <%= form_for @cohort do |f| %>
 	<p>
-		<%= f.text_field :name, :placeholder => "Cohort Name" %><br>
+		<div id="login_form"><%= f.text_field :name, :placeholder => "Cohort Name" %></div>
 	</p>
 
 	<p>
-		<%= f.text_field :email, :placeholder => "Cohort Email" %><br>
+		<div id="login_form"><%= f.text_field :email, :placeholder => "Cohort Email" %></div>
 	</p>
 
 	<p>
-		<%= f.submit "Add Cohort" %>
+		<%= f.submit "Add Cohort", class: "btn btn-info" %>
 	</p>
 <% end %>

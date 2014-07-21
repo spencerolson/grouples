@@ -18,8 +18,8 @@ li{
 
 .group-box{
   display: inline-block;
-  height: 75px;
-  width: 375px;
+  min-height: 75px;
+  min-width: 375px;
   border: solid;
 }
 
@@ -38,7 +38,7 @@ li{
 }
 
 img {
-    width: 100%;
+
   height: auto;
   overflow: hidden;
 }
@@ -66,5 +66,5 @@ img {
 }
 
 .damn-sizes {
-  height: 260px;
+  height: 320px;
 }

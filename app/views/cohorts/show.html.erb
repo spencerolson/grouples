@@ -2,12 +2,12 @@
 <h1><%= @cohort.name %></h1>
 
 <div class="btn-group btn-group-lg">
-	<%= link_to 'View all Previously Created Groups', cohort_groups_path(@cohort) %>
-	<%= link_to "Add a Student", new_cohort_student_path(@cohort.id)%>
-	<%=link_to "Create New Group", new_cohort_group_path(@cohort.id)%>
-	</p>
-</div>
+	<%= link_to 'Past Groups', cohort_groups_path(@cohort), class: "btn btn-info", role: "button" %>
+	<%= link_to "Add a Student", new_cohort_student_path(@cohort.id), class: "btn btn-info", role: "button"%>
+	<%=link_to "Create New Group", new_cohort_group_path(@cohort.id), class: "btn btn-info", role: "button"%>
 
+</div>
+<br><br>
 
 <% @cohort.students.each do |student| %>
 <div class="row" style= "display: inline-block">

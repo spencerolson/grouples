@@ -7,7 +7,7 @@
 <%=  form_for(@photo, url: cohort_photos_path) do |f| %>
 
 	<p>
-		<%= f.text_field :photo_url, :placeholder => "Photo Url" %><br>
+		<div id="login_form"><%= f.text_field :photo_url, :placeholder => "Photo Url" %></div>
 	</p>
 	
 	<% if @student %>
@@ -29,7 +29,7 @@
 		</p>
 	<% end %>
 	<p>
-		<%= f.submit "Add Photo"%>
+		<%= f.submit "Add Photo", class: "btn btn-info"%>
 	</p>
 
 <% end %>

@@ -1,7 +1,6 @@
 
-<%= stylesheet_link_tag "cohort" %>
-<h1> Cohort Navigation </h1>
-<%= link_to "Create New Cohort", new_cohort_path %><br>
+<h1> Cohort Navigation </h1><br>
+<%= link_to "Create New Cohort", new_cohort_path, class: "btn-lg btn-info" %><br><br><br>
 <div class="cohort-images">
 	<% @cohorts.each do |cohort| %>
 		<div class="cohort-image">

@@ -11,6 +11,7 @@
 
 #----------------------------Cohorts-------------------------------------------#
 coyotes = Cohort.create(name: "Coyotes", email: "coyotoes-2014@gmail.com")
+Cohort.create(name: "Salamanders", email: "salamanders-2014@gmail.com")
 Cohort.create(name: "Bobolinks", email: "bobolinks-2014@gmail.com")
 
 #----------------------------Groups and students-------------------------------------------#
@@ -84,4 +85,5 @@ Photo.create(photo_url: "https://secure.gravatar.com/avatar/205e3db441112353fd8f
   Photo.create(photo_url: "https://pbs.twimg.com/profile_images/2233651624/jones_400x400.jpg", imageable_id: i+21, imageable_type: "Student")
 end
 
-Photo.create(photo_url: "http://www.allaboutbirds.org/guide/PHOTO/LARGE/Bobolink-Vyn_060513_0010.jpg", imageable_id: 2, imageable_type: "Cohort")
+Photo.create(photo_url: "https://avatars1.githubusercontent.com/u/6732204?s=140", imageable_id: 2, imageable_type: "Cohort")
+Photo.create(photo_url: "https://avatars1.githubusercontent.com/u/6732208?s=140", imageable_id: 3, imageable_type: "Cohort")

@@ -7,9 +7,9 @@ class Cohort < ActiveRecord::Base
 
 
   def new_week
-    current_week = self.groups.order(:week_number).last.week_number
+    current_week = self.groups.order(:week_number).last
     if current_week
-      current_week + 1
+      current_week.week_number + 1
     else
       1
     end

@@ -3,10 +3,10 @@
 <%= form_for(@student, url: cohort_students_path) do |f| %>
 	<%= f.hidden_field :cohort_id, :value => @cohort.id %>
 	<p>
-		<%= f.text_field :name, :placeholder => "Student Name" %>
+		<div id="login_form"><%= f.text_field :name, :placeholder => "Student Name" %></div>
 	</p>
 
 	<p>
-		<%= f.submit "Add Student" %>
+		<%= f.submit "Add Student", class: "btn btn-info" %>
 	</p>
 <% end %>

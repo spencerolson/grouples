@@ -1,5 +1,5 @@
-<%= link_to 'Cohort Home Page', cohort_path(@cohort) %>
-<%= @cohort.name %>
+<%= link_to 'Cohort Home Page', cohort_path(@cohort), class: "btn btn-primary" %>
+<h1><%= @cohort.name %></h1>
 <br>
 <% week = 0 %>
 <% @cohort.groups.each_with_index do |group, index| %>
@@ -8,7 +8,6 @@
 		<% week = group.week_number %>
 
 	<% end %>
-	<h5><%= "Group #{index + 1}:"%></h5>
 	<% group.students.each do |student| %>
 		 <%= student.name %><%= "," unless group.students.last == student %>
 	<% end %>
