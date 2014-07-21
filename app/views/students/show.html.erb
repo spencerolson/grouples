@@ -1,10 +1,14 @@
 <h3><%= @student.name %></h3>
 
-<ul>
+  
+ 
 
+
+<ul class="list-group">
+	<li> <h5>Grouped With</h5></li>
 	<% @cohort_mates.each do |student, times_grouped| %>
-		<li id="student_stats">
-			<%= student.name %> <%= times_grouped %> 
+		<li id="student_stats" class="list-group-item" style="color: black">
+			<%= student.name %><span class="badge"><%= times_grouped %> </span>
 		</li>
 	<% end %>
 </ul>
