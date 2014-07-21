@@ -1,6 +1,6 @@
 <h1>Edit Student</h1>
 
-<%= form_for(@student, url: cohort_student_path(@student.cohort_id, @student.id)) do |f| %>
+<%= form_for(@student, url: cohort_student_path(@student.cohort_id, @student.id)) do |f| %><br>
 
 	<p>
 		<div id="login_form"><%= f.text_field :name, :value => @student.name %></div>

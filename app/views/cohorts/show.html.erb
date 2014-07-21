@@ -1,7 +1,6 @@
-<%= link_to 'Back', cohorts_path, class: "btn btn-primary" %>
 <h1><%= @cohort.name %></h1>
 
-<div class="btn-group btn-group-lg">
+<div id="btn-party" class="btn-group btn-group-lg">
 	<%= link_to 'Past Groups', cohort_groups_path(@cohort), class: "btn btn-info", role: "button" %>
 	<%= link_to "Add a Student", new_cohort_student_path(@cohort.id), class: "btn btn-info", role: "button"%>
 	<%=link_to "Create New Group", new_cohort_group_path(@cohort.id), class: "btn btn-info", role: "button"%>
@@ -17,7 +16,7 @@
       <div class="caption">
         <h3><%= student.name %></h3>
         <p><%= link_to "Edit", edit_student_path(student.id), class: "btn btn-primary", role: "button" %>
-	<%= button_to "Delete", student, :method => :delete, class: "btn btn-button", role: "button" %></p>
+	<%= link_to "Delete", student, :method => :delete, data: {:confirm => "Are you sure?"}, class: "btn btn-info", role: "button" %></p>
       </div>
     </div>
   </div>

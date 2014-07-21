@@ -13,16 +13,27 @@
 
 </head>
 <body>
+<div class="site-wrapper">
 
-	<% if signed_in? %>
-	  <%= link_to "Sign out", session_path, method: :delete, class: "btn btn-primary" %>
-	<% else %>
-	  <%= link_to "Sign in", new_session_path, class: "btn btn-primary" %>
-	  <%= link_to "Sign up", new_user_path, class: "btn btn-primary" %>
-	<% end %>
+      <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+          <div class="masthead clearfix">
+            <div class="inner">
+              <h3 class="masthead-brand">Grouples</h3>
+              <ul class="nav masthead-nav">
+                <li class="active"><a href="/cohorts">Home</a></li>
+                <li><%= link_to "Sign out", session_path, method: :delete%></li>
+                <li><a href="https://twitter.com/al2o3cr">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+
 
 	<%= yield %>
 
-
+</div>
 </body>
+
 </html>

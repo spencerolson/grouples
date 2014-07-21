@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
+  <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Grouples</title>
@@ -9,14 +9,31 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
 
 </head>
 <body>
-	
+<div class="site-wrapper">
 
-	<%= yield %>
+      <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+          <div class="masthead clearfix">
+            <div class="inner">
+              <h3 class="masthead-brand">Grouples</h3>
+              <ul class="nav masthead-nav">
+                <li class="active"><a href="/">Home</a></li>
+                <li><%= link_to "Sign Up", new_user_path%></li>
+                <li><a href="https://twitter.com/al2o3cr">Contact</a></li>
+              </ul>
+            </div>
+          </div>
 
 
+  <%= yield %>
+
+</div>
 </body>
+
 </html>

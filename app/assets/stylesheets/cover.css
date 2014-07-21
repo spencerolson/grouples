@@ -9,6 +9,9 @@ a:hover {
   color: #fff;
 }
 
+#btn-party {
+  margin-top: 15px;
+}
 /* Custom default button */
 .btn-default,
 .btn-default:hover,
@@ -31,6 +34,7 @@ body {
   background: -o-linear-gradient(#333, #7f7f7f); /* For Opera 11.1 to 12.0 */
   background: -moz-linear-gradient(#333, #7f7f7f); /* For Firefox 3.6 to 15 */
   background: linear-gradient(#333, #7f7f7f); /* Standard syntax */
+  background-attachment: fixed;
 }
 body {
   color: #fff;
@@ -138,7 +142,7 @@ body {
 @media (min-width: 768px) {
   /* Pull out the header and footer */
   .masthead {
-    position: fixed;
+    position: absolute;
     top: 0;
   }
   .mastfoot {
@@ -161,10 +165,12 @@ body {
   .masthead,
   .mastfoot,
   .cover-container {
-    width: 700px;
+    width: 900px;
   }
 }
 
 #login_form {
   color:black;
 }
+
+
