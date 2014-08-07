@@ -87,7 +87,7 @@ $(document).ready(function() {
           type: "POST",
           data: groups_hash,
           success: function(response) {
-            window.location.replace("http://localhost:3000/cohorts/" + cohortId + "/groups");
+            window.location.replace("../groups");
           }
       })
   })
