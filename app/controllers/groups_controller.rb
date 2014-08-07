@@ -17,15 +17,12 @@ class GroupsController < ApplicationController
       other[cohort_member] = cohort_member.times_grouped_with(current_group_members)
     end
 
-    puts "-"*400
     other = other.sort_by{|student, times_grouped| times_grouped}
     @students = []
 
     other.each do |student, times_grouped|
-      puts "#{student.name}: grouped #{times_grouped} times"
       @students << student
     end
-    puts "#{other_cohort_members.length} other cohort members"
 
 
     respond_to do |format|
@@ -46,7 +43,6 @@ class GroupsController < ApplicationController
         group = Group.create(cohort_id: params[:cohort_id], week_number: week)
         value.each do |id|
           group.students << Student.find(id)
-          puts "this is the id: #{id} and the group is #{group}"
         end
       end
     end
